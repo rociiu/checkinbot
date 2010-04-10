@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru">
+<head>
+	<title>Checkin Bot</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+	<div id="page">
+		<div id="head">
+			<div class="inner clearfix">
+				<h1>CheckinBot</h1>
+				<ul>
+					<li>Hello, <a href="#">{{ user.nickname }}</a></li>
+					<li><a href="{{ logout_url }}">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="content" class="clearfix">
+			<!-- 
+			<ul>
+				<li><a href="#">Checkins</a></li>
+				<li><a href="#">Checkouts</a></li>
+			</ul>
+			-->
+			<div class="main">
+				<form action="/create" method="post" id="create_form">
+					<div>
+						<input type="text" name="content"/>
+					</div>
+					<div class="button_field">
+						<input type="submit" value="Check In"/>
+					</div>
+				</form>
+				<ul class="lists checkin ">
+					{% for checkin in checkins %}
+						<li>
+							<p>{{ checkin.note }}</p>
+							<div>
+								<form action="/checkout" method="post">
+									<span class="time">({{ checkin.checkin_at }})</span>
+									<input type="hidden" name="key" value="{{ checkin.key }}"></input>
+									<input type="submit" value="Checkout" />
+								</form>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+				<ul class="lists checkout">
+					{% for checkout in checkouts%}
+						<li>
+							<p><del>{{ checkout.note }}</del></p>
+							<div>
+								<span class="time">({{ checkout.checkin_at }} ~ {{ checkout.checkout_at }})</span>
+							</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="side">
+				<div class="inner">
+					<h2>What is CheckinBot?</h2>
+				</div>
+			</div>
+		</div>
+		<div id="foot">
+			<p>&copy;2010 CheckinBot  Brought you by <a href="mailto:rociiu.yu@gmail.com">rociiu.yu@gmail.com</a></p>
+		</div>
+	</div>
+</body>
+</html>

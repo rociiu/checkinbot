@@ -1,0 +1,132 @@
+body {
+	font-size: 110%;
+	font-family: "Myriad Pro",MyriadPro,Helvetica,"Helvetica Neue",Arial,sans-serif;
+}
+#head {
+	background: #843f60;
+	width: 100%;
+	padding: 30px 0;
+	color: #fff;
+}
+#head h1 {
+	float: left;
+	font-size: 1.7em;
+	text-shadow: 1px -1px #333;
+}
+#head ul {
+	float: right;
+}
+#head ul li {
+	display: inline;
+}
+#head ul li a {
+	color: #eee;
+	display: inline-block;
+	margin-left: 15px;
+}
+#head .inner {
+	width: 800px;
+	margin: 0 auto;
+}
+#content, #foot {
+	width: 800px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+#content {
+	margin-top: 50px;
+}
+#content .main {
+	float: left;
+	width: 550px;
+}
+#content .side {
+	float: right;
+	width: 250px;
+}
+#content .side .inner {
+	padding: 10px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #555;
+}
+
+#content .main .lists li {
+	padding: 15px 0;
+}
+#content .main .lists li p {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+#content .main .lists li span.time {
+	font-size: 0.9em;
+	color: #111;
+}
+#content .main .lists li a.button {
+	font-size: 0.8em;
+	color: #333;
+	border: 1px solid #ccc;
+	padding: 3px 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-decoration: none;
+	margin-left: 10px;
+}
+#content .main .checkout {
+	font-size: 0.9em;
+	color: #666;
+}
+#content .main form#create_form {
+	margin-bottom: 15px;
+}
+#content .main form#create_form input[type=text] {
+	font-size:20px;
+	font-weight:bold;
+	margin:0 0 10px;
+	padding:5px;
+	width:430px;
+}
+#content .main form#create_form .button_field {
+	width: 445px;
+	text-align: right;
+}
+#content .main form#create_form .button_field input[type=submit]{
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #333;
+	background: #eee;
+	padding: 3px 10px;
+	cursor: pointer;
+}
+div.signin {
+	text-align: center;
+}
+div.signin a {
+	display: block;
+	border: 2px solid #ccc;
+	background: #eee;
+	width: 200px;
+	margin: 0 auto;
+	padding: 10px 15px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+#login {
+	margin: 0 auto;
+	text-align: center;
+	background: #843f60;
+	padding: 10px 0;
+	color: #fff;
+}
+#login  h1 {
+	font-size: 2.5em;
+	margin: 30px 0;
+	text-shadow: 1px -1px #333;
+}
+#foot {
+	text-align: center;
+	color: #333;
+	font-size: 0.9em;
+	margin-top: 70px;
+}
