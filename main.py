@@ -10,6 +10,12 @@ from google.appengine.ext.webapp import template
 from google.appengine.api import users
 from google.appengine.ext import db
 from google.appengine.ext.webapp import xmpp_handlers
+from django.utils import simplejson
+from google.appengine.api import urlfetch
+
+# simplejson.loads(string)
+# simplejson.dumps(python_object)
+
 import re
 _DEBUG = True
 
@@ -140,6 +146,19 @@ class XmppHandler(xmpp_handlers.CommandHandler):
 		help_msg += "/list list all your checkins \n"
 		help_msg += "Visit checkinbot.appspot.com for web interface."
 		message.reply(help_msg)
+	
+	def search_command(self, message=None):
+		search_url = "http://search.twitter.com/search.json?q=%s" % message.arg
+		response = urlfetch.fetch(search_url)
+		reply_msg = ""
+		res_obj = simplejson.loads(response.content)
+		
+		for tweet_obj in res_obj['results']:
+			tweet_txt = tweet_obj['text']
+			reply_msg += tweet_txt + "\n\n"
+		
+		
+		message.reply(reply_msg)
 	
 	def text_message(self, message=None):
 		email = message.sender.split('/')[0]
