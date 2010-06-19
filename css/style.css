@@ -2,6 +2,9 @@ body {
 	font-size: 110%;
 	font-family: "Myriad Pro",MyriadPro,Helvetica,"Helvetica Neue",Arial,sans-serif;
 }
+p {
+	line-height: 1.7em;
+}
 #head {
 	background: #843f60;
 	width: 100%;
