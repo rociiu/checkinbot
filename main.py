@@ -32,6 +32,11 @@ class CheckIn(db.Model):
 	def checkout(self):
 		self.checkout_at = datetime.now()
 		self.put()
+
+class Project(db.Model):
+	email = db.StringProperty()
+	name  = db.StringProperty()
+
 	
 class BaseRequestHandler(webapp.RequestHandler):
   """Supplies a common template generation function.
